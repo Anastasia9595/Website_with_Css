@@ -6,39 +6,233 @@
 
 html {
   font-size: 100%;
+  font-family: "Jost", sans-serif;
+}
+
+/** Breakpoints */
+
+/** 1200px oder schmaler */
+@media (max-width: 75em) {
+}
+/** 992px oder schmaler */
+@media (max-width: 62em) {
+}
+/** 768px oder schmaler */
+@media (max-width: 48em) {
+}
+/** 576px oder schmaler */
+@media (max-width: 36em) {
 }
 
 .container {
-  width: 75rem;
+  max-width: 75rem;
   margin: 0px auto;
 }
+
+.header {
+  height: 40rem;
+  min-height: calc(13rem + 32vw);
+  position: relative;
+  min-height: 40vw;
+  overflow: hidden;
+}
+
+/** 1200px oder schmaler */
+@media (max-width: 75em) {
+  .header {
+    height: calc(18rem + 32vw);
+  }
+}
+
+.header__slope {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 10vw;
+  background-image: linear-gradient(-5.71deg, white 49%, transparent 50.1%);
+  background-repeat: no-repeat;
+  background-position: center 100%;
+  background-size: 100vw 10vw;
+}
+
+.header__container {
+  position: relative;
+}
+
+.header::before {
+  content: "";
+  top: 0;
+  position: absolute;
+  bottom: -9rem;
+  width: 100vw;
+
+  background-image: url("../assets/image/pexels-benjamin-suter-3617500.jpg");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 100% auto;
+}
+
+.header::after {
+  content: "";
+  bottom: -9rem;
+  width: 100vw;
+  height: 33vw;
+  position: absolute;
+
+  background-image: url("../assets/image/pexels-benjamin-suter-3617500-mountains.webp");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 100% auto;
+}
+
+/** 1200px oder schmaler */
+@media (max-width: 75em) {
+  .header::before {
+    bottom: -4rem;
+  }
+  .header::after {
+    bottom: -4rem;
+  }
+}
+@media (max-width: 62em) {
+  .header::before {
+    bottom: -1rem;
+  }
+  .header::after {
+    bottom: -1rem;
+  }
+}
+@media (max-width: 36em) {
+  .header::before {
+    background-size: cover;
+  }
+  .header::after {
+    display: none;
+  }
+}
+
+.icon {
+  fill: currentColor;
+  height: 1em;
+  vertical-align: middle;
+  position: relative;
+  top: -0.075em;
+}
+
 .navigation__list-item {
   list-style-type: none;
   display: block;
   float: left;
 }
+
+@media (max-width: 62em) {
+  .navigation__list-item--mobile-hidden {
+    display: none;
+  }
+}
+
+.navigation__list-item--menu {
+  float: right;
+  font-size: 3rem;
+}
+
 .navigation__list-item-link {
   color: white;
   text-decoration: none;
   padding: 0.5rem 0.25rem 0.25rem 0.25rem;
   margin: 2rem 2rem;
   display: block;
+  text-shadow: 0 0 0.5rem black;
 }
 
 .navigation__list-item-link:hover {
-  border-bottom: 0.2rem solid rgb(0, 226, 156);
+  border-bottom: 0.15rem solid rgb(0, 226, 156);
 }
 
-.header {
-  background-image: linear-gradient(-5.71deg, white 49%, transparent 51%),
-    url("../assets/image/pexels-benjamin-suter-3617500.jpg");
-  height: 40rem;
-  background-repeat: no-repeat, no-repeat;
-  background-position: center 100%, center center;
-  background-size: 100vw 10vw, cover;
+.navigation__list-item--menu .navigation__list-item-link {
+  margin-top: 0.4rem;
+}
+
+.navigation__list-item--menu .navigation__list-item-link:hover {
+  border-bottom: none;
+  color: rgb(200, 200, 200);
+}
+
+.navigation__list-item-link--logo {
+  margin-top: 0.9rem;
+}
+
+.navigation__list-item-link--logo:hover {
+  border-bottom: none;
+  color: rgb(200, 200, 200);
+}
+
+@media (max-width: 75em) {
+  .header {
+    height: calc(18rem + 32vw);
+  }
+}
+
+@media (max-width: 75em) {
+  .header::before {
+    bottom: -4rem;
+  }
+}
+
+@media (max-width: 75em) {
+  .header::after {
+    bottom: -4rem;
+  }
 }
 
 .navigation__list-item-logo {
   width: 4rem;
   height: 4rem;
+  fill: currentColor;
+}
+
+.header__heading-container {
+  clear: both;
+}
+
+.header__heading-main {
+  padding-top: 3rem;
+  font-size: 7rem;
+  text-align: center;
+  line-height: 92%;
+  color: white;
+  text-transform: uppercase;
+  text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 62em) {
+  .header__heading-main {
+    font-size: 5rem;
+  }
+}
+
+@media (max-width: 48em) {
+  .header__heading-main {
+    font-size: 3rem;
+  }
+}
+
+.header__heading-sub {
+  position: relative;
+  z-index: 1;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  letter-spacing: 0.25rem;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 62em) {
+  .header__heading-sub {
+    font-size: 1rem;
+  }
 }
